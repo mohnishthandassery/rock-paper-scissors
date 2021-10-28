@@ -1,64 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <script>
-        function getRandomIndex(max) {
-            return Math.floor(Math.random() * max);
-        }
-
-        function titleCase(title) {
-            return title[0].toUpperCase()+title.toLowerCase().slice(1,title.length);
-        }
-
-        function getUserInput() {
-            return prompt('Rock, Paper or Scissors ?');
-        }
-
-        function computerPlay() {
-            const options = [
-                "rock",
-                'paper',
-                'scissors'
-            ];
-            
-            const index = getRandomIndex(options.length);
-            return options[index];
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            const player = playerSelection.toLowerCase();
-            const computer = computerSelection.toLowerCase();
-
-            if(player === computer) {
-                return "It's a Tie!"
-            } else if(
-                player === 'rock' && computer === 'paper' || 
-                player === 'paper' && computer === 'scissors' ||
-                player === 'scissors' && computer === 'rock'
-            ) {
-                return `You Lose! ${titleCase(computer)} beats ${titleCase(player)}`
-            } else {
-                return `You Win! ${titleCase(player)} beats ${titleCase(computer)}`
-            }
-
-        }
-
-        function game() {
-            for (let index = 0; index < 5; index++) {
-                const playerSelection = getUserInput();
-                const computerSelection = computerPlay();
-                console.log(playRound(playerSelection, computerSelection));
-            }
-        }
-
-        game();
-    </script>
-</head>
-<body>
-    
-</body>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <p id="score">
+          <span id="player">0</span>
+          <span id="computer">0</span>
+        </p>
+      </div>
+      <button class="rps" value="rock">Rock</button>
+      <button class="rps" value="paper">Paper</button>
+      <button class="rps" value="scissors">Scissors</button>
+      <div>
+        <p id="result"></p>
+      </div>
+    </div>
+  </body>
 </html>
