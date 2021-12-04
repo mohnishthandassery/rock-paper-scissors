@@ -6,21 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="container">
-      <div>
-        <p id="score">
+      <h1>Rock Paper Scissors</h1>
+      <section id="score-section">
+        <div>
+          You
           <span id="player">0</span>
+        </div>
+        <div>
+          Computer
           <span id="computer">0</span>
-        </p>
-      </div>
-      <button class="rps" value="rock">Rock</button>
-      <button class="rps" value="paper">Paper</button>
-      <button class="rps" value="scissors">Scissors</button>
-      <div>
+        </div>
+      </section>
+      <section id="player-options">
+        <button class="rps btn-rock" value="rock">
+          <img src="./assets//images/icons8-rock-48.png" alt="rock" />
+          Rock
+        </button>
+        <button class="rps btn-paper" value="paper">
+          <img src="./assets//images/icons8-paper-48.png" alt="paper" />
+          Paper
+        </button>
+        <button class="rps btn-scissors" value="scissors">
+          <img src="./assets//images/icons8-scissor-64.png" alt="scissors" />
+          Scissors
+        </button>
+      </section>
+      <section id="result-section">
         <p id="result"></p>
-      </div>
+      </section>
     </div>
+    <footer>
+      <a target="_blank" href="https://icons8.com/icon/9FSQ5judlnAN/rock"
+        >Rock</a
+      >
+      icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      <a target="_blank" href="https://icons8.com/icon/x2npT763PzXe/paper"
+        >Paper</a
+      >
+      icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      <a target="_blank" href="https://icons8.com/icon/fFy7V8pRsySH/scissor"
+        >Scissor</a
+      >
+      icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </footer>
   </body>
 </html>

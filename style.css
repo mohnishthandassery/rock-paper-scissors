@@ -1,0 +1,77 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 540px;
+  height: 100vh;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%23CCC' stroke-width='0' %3E%3Crect fill='%23F5F5F5' x='-60' y='-60' width='110' height='240'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1 {
+  text-align: center;
+  padding-top: 8rem;
+}
+
+#score-section,
+#player-options,
+#result-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px;
+}
+
+#score-section > div > span {
+  font-size: xxx-large;
+}
+
+#score-section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 144px;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+button:hover {
+  font-size: medium;
+}
+
+button > img {
+  width: 36px;
+  height: 36px;
+}
+
+.btn-rock {
+  background-color: darkgoldenrod;
+}
+
+.btn-paper {
+  background-color: lavender;
+}
+
+.btn-scissors {
+  background-color: silver;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
