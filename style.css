@@ -74,6 +74,10 @@ button {
     min-width: var(--mobile-button-width);
     min-height: var(--mobile-button-height);
   }
+
+  #player-options {
+    flex-direction: column;
+  }
 }
 
 button:hover {
