@@ -1,9 +1,11 @@
 :root {
   --full-space: 1rem;
   --button-size: 144px;
-  --mobile-button-height: 80px;
-  --mobile-button-width: 168px;
+  --mobile-button-height: 88px;
+  --mobile-button-width: 88px;
   --primary-color: #282120;
+  --border-color: goldenrod;
+  --border-style: solid;
 }
 
 * {
@@ -28,20 +30,34 @@ body {
 }
 
 header {
-  padding: 4rem;
+  padding: 3rem;
 }
 
 h1 {
   text-align: center;
 }
 
+#result-text-section {
+  padding: 1rem;
+}
+
 #score-section,
 #player-options,
+#result-text-section,
 #result-section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: calc(var(--full-space) / 4);
+}
+
+#result-section {
+  flex-direction: column;
+  align-items: center;
+}
+
+#result-value {
+  display: grid;
 }
 
 #score-section > div > span {
@@ -63,8 +79,8 @@ button {
   min-width: var(--button-size);
   border: none;
   cursor: pointer;
-  padding: calc(var(--full-space) / 2);
-  border-radius: calc(var(--full-space) / 2);
+  padding: calc(var(--full-space) / 3);
+  border-radius: calc(var(--full-space) * 5);
   margin: calc(var(--full-space) / 2);
   transition: ease-in-out 0.25s;
 }
@@ -73,10 +89,6 @@ button {
   button {
     min-width: var(--mobile-button-width);
     min-height: var(--mobile-button-height);
-  }
-
-  #player-options {
-    flex-direction: column;
   }
 }
 
@@ -88,6 +100,12 @@ button:hover {
 button > img {
   width: 36px;
   height: 36px;
+}
+
+div > img {
+  width: 48px;
+  height: 48px;
+  margin: 2px;
 }
 
 .btn-rock {
@@ -109,4 +127,98 @@ footer {
   width: 100%;
   text-align: center;
   display: none;
+}
+
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0) scaleY(3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0) scaleY(0.9);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0) scaleY(0.95);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0) scaleY(0.985);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInDown {
+  animation-name: bounceInDown;
+  animation-duration: 1s;
+}
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0) scaleY(5);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0) scaleY(0.9);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0) scaleY(0.95);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  animation-name: bounceInUp;
+  animation-duration: 1s;
+}
+
+.computer-selection,
+.player-selection {
+  text-align: center;
+  height: 100px;
+  width: 200px;
+  background: gold;
+}
+
+.computer-selection {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  border-radius: 150px 150px 0 0;
+  border-bottom: 1px var(--border-style) var(--border-color);
+}
+
+.player-selection {
+  border-radius: 0px 0px 150px 150px;
+  border-top: 1px var(--border-style) var(--border-color);
 }
